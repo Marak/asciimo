@@ -1,0 +1,14 @@
+{
+    "name": "asciimo",
+    "description": "create awesome ascii art with javascript! works in node.js or the browser.",
+    "version": "0.1.0",
+    "author": "Marak Squires",
+    "repository": {
+        "type": "git",
+        "url": "http://github.com/Marak/asciimo.git" 
+    },
+    "engine": [
+        "node >=0.1.90" 
+    ],
+    "main": "lib/asciimo" 
+}

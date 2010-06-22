@@ -1,0 +1,195 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<!-- 
+
+asciimo - index.html
+
+Copyright (c) 2010 Marak Squires
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+-->
+
+<html>
+<head>
+	<title>asciimo - create awesome ascii art with javascript! works in the browser or node.js</title>
+	
+	
+	<!-- lol css -->
+	<style type="text/css">
+		* { padding: 0; margin: 0; }
+		body {
+			padding: 30px;
+			padding-top:5px;
+			font-family: Arial, Helvetica, sans-serif;
+		}
+		h1 {
+			margin-bottom: 1em;
+			border-bottom: 1px solid #ccc;
+		}
+		
+		h2 {
+			margin-bottom: 1em;
+			border-bottom: 1px solid #ccc;
+		}
+
+    h1 {
+        margin-bottom: 0.7em;
+    }
+    
+    h2 {
+        margin-top: 1em;
+    }
+    
+    a { color:#0000FF;}
+    a.visited{ color:#0000FF;}
+    
+    
+    #theCode{width:100%;height:80px;}
+    #asciiArt{ width:3000px; height:1000px; color:white; background-color:black; scroll:auto;}
+    .ninja{font-size:10px;}
+	</style>
+	<script type="text/javascript" src="./lib/asciimo.js"></script>
+
+	<!-- fonts.js doesn't contain the fonts, just the font names. fonts are located in /asciimo/fonts/   -->
+	<script type="text/javascript" src="./lib/fonts.js"></script>
+
+  <!-- jquery not required, just use this this demo page -->
+	<script type="text/javascript" src="./lib/jquery.js"></script>
+
+
+  <script type="text/javascript">
+  
+    // not used, could be implemented, maybe AJAX browser cache is good enough? do some research!
+    var fontCache = {};
+  
+    $(document).ready(function(){
+
+      // populate the select box
+      for(var i = 0; i<asciimoFonts.length; i++){
+        var fontTitle = asciimoFonts[i].replace('.flf','').replace('.aol',''); // remove the file extentions for the title
+        $('#fontSelector').append('<option value = "'+asciimoFonts[i]+'">'+fontTitle+'</option>');
+      }
+      
+      // protip : understanding the following two blocks of code will make you jQuery ninja
+      
+      /***** NAMED EVENTS *****/
+
+        // change the font and load a new font via jQuery async AJAX request
+        $(document).bind('##CHANGE_FONT##', function(e, data){
+          var font = data.fontName; 
+          $.get('./fonts/' + font,function(rsp){
+            COOL_MAGIC(rsp); // call asciimo API method, we can make this better. just file a support issue!
+            $(document).trigger('##RENDER_ASCII_ART##'); // the font has changed, lets call the render ascii art event
+          });
+        });
+    
+        $(document).bind('##RENDER_ASCII_ART##', function(e){
+          $('#asciiArt').html('<pre>' + createLargeText($('#theCode').val()) + '</pre>');
+        });
+
+      /**** END NAMED EVENTS ****/
+
+      /**** BIND UI EVENTS ****/
+
+        // select box change
+        $('#fontSelector').change(function(){
+          $(document).trigger('##CHANGE_FONT##', {"fontName":$(this).val()})
+        });
+      
+        // you would think jQuery.change() would cover the keypress event on select boxes? 
+        $("#fontSelector").keypress(function (){
+          $(document).trigger('##CHANGE_FONT##', {"fontName":$(this).val()})
+        });
+
+        // keyup on textarea
+        $('#theCode').keyup(function(e){
+          $(document).trigger('##RENDER_ASCII_ART##');
+        });
+      
+        $('#run').click(function(e){
+          $(document).trigger('##RENDER_ASCII_ART##');
+        });
+ 
+      /**** END UI BIND EVENTS ****/
+
+      // little bit of a onReady hack. i'll fix the API a bit so this can be done better
+      $(document).trigger('##CHANGE_FONT##', {"fontName":'Doh.flf'});
+      $('#fontSelector').val('Doh.flf');
+
+    });
+  </script>
+
+</head>
+<body>
+  <table>
+    <tr valign = "middle">
+      <td><img src = "./images/asciimo.png"/></td>
+      <td>
+        <br/>
+        <br/>      
+        <br/>      
+        <h1>greetings, i am asciimo</h1>
+        <h1>i create awesome ascii art with javascript!</h1>
+        <h1>i work in <a href = "http://github.com/marak/asciimo">node.js</a> and the <a href = "http://github.com/marak/asciimo">browser</a></h1>
+        <form>
+          <textarea id = "theCode" class = "box">art is fun</textarea>
+          <select id = "fontSelector" name = "fontSelector"></select>
+          <input type = "button" id = "run" name = "run" value = "<== change select box to change font.   type in the text area to change text. click here to force render.  " /> 
+          <br/>
+        </form>
+        <br/>
+        <span class = "ninja"><strong>protip:</strong> using a non webkit browser will let you quickly iterate through the select box using your keyboard. for some reason webkit likes to open the entire select box &gt;.&lt;</span>
+      </td>    
+    </tr>
+  </table>
+  <div id = "asciiArt" class = "box">
+    <pre>
+
+                                                tttt                 iiii                           ffffffffffffffff                                    
+                                             ttt:::t                i::::i                         f::::::::::::::::f                                   
+                                             t:::::t                 iiii                         f::::::::::::::::::f                                  
+                                             t:::::t                                              f::::::fffffff:::::f                                  
+    aaaaaaaaaaaaa  rrrrr   rrrrrrrrr   ttttttt:::::ttttttt         iiiiiii     ssssssssss         f:::::f       ffffffuuuuuu    uuuuuunnnn  nnnnnnnn    
+    a::::::::::::a r::::rrr:::::::::r  t:::::::::::::::::t         i:::::i   ss::::::::::s        f:::::f             u::::u    u::::un:::nn::::::::nn  
+    aaaaaaaaa:::::ar:::::::::::::::::r t:::::::::::::::::t          i::::i ss:::::::::::::s      f:::::::ffffff       u::::u    u::::un::::::::::::::nn 
+             a::::arr::::::rrrrr::::::rtttttt:::::::tttttt          i::::i s::::::ssss:::::s     f::::::::::::f       u::::u    u::::unn:::::::::::::::n
+      aaaaaaa:::::a r:::::r     r:::::r      t:::::t                i::::i  s:::::s  ssssss      f::::::::::::f       u::::u    u::::u  n:::::nnnn:::::n
+    aa::::::::::::a r:::::r     rrrrrrr      t:::::t                i::::i    s::::::s           f:::::::ffffff       u::::u    u::::u  n::::n    n::::n
+   a::::aaaa::::::a r:::::r                  t:::::t                i::::i       s::::::s         f:::::f             u::::u    u::::u  n::::n    n::::n
+  a::::a    a:::::a r:::::r                  t:::::t    tttttt      i::::i ssssss   s:::::s       f:::::f             u:::::uuuu:::::u  n::::n    n::::n
+  a::::a    a:::::a r:::::r                  t::::::tttt:::::t     i::::::is:::::ssss::::::s     f:::::::f            u:::::::::::::::uun::::n    n::::n
+  a:::::aaaa::::::a r:::::r                  tt::::::::::::::t     i::::::is::::::::::::::s      f:::::::f             u:::::::::::::::un::::n    n::::n
+   a::::::::::aa:::ar:::::r                    tt:::::::::::tt     i::::::i s:::::::::::ss       f:::::::f              uu::::::::uu:::un::::n    n::::n
+    aaaaaaaaaa  aaaarrrrrrr                      ttttttttttt       iiiiiiii  sssssssssss         fffffffff                uuuuuuuu  uuuunnnnnn    nnnnnn
+
+
+
+
+
+
+</pre>
+    
+    
+  </div>
+  <a href = "http://github.com/marak/asciimo/">
+    <img alt="Fork me on GitHub" src="http://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" style="position: absolute; z-index: 10; top: 0pt; right: 0pt; border: 0pt none;">
+  </a>
+</body>
+</html>

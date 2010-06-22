@@ -1,0 +1,303 @@
+../../fonts/Bigfig.flf
+flf
+10
+monospace
+
+$
+0
+true
+false
+false
+false
+false
+false
+false
+false
+95
+3
+ $ 
+ $ 
+ $ 
+ | 
+ | 
+ o 
+| |
+ $ 
+ $ 
+| |
+===
+| |
+  _
+(| 
+_|)
+O /
+ / 
+/ O
+() 
+/\\/
+\\/\\
+ / 
+ $ 
+ $ 
+  /
+ ( 
+  \\
+\\  
+ ) 
+/  
+\\|/
+-*-
+/|\\
+ | 
+-+-
+ | 
+   
+   
+ / 
+   
+---
+ $ 
+   
+   
+ o 
+  /
+ / 
+/  
+ _ 
+/ \\
+\\_/
+   
+/| 
+ | 
+__ 
+ _)
+/__
+__ 
+__)
+__)
+   
+|_|
+  |
+ __
+|_ 
+__)
+ _ 
+|_ 
+|_)
+ __
+  /
+ / 
+ _ 
+(_)
+(_)
+ _ 
+(_|
+ _|
+ o 
+ $ 
+ o 
+ o 
+ $ 
+ / 
+  /
+ &lt; 
+  \\
+___
+___
+ $ 
+\\  
+ &gt; 
+/  
+ _ 
+  )
+ o 
+ _ 
+/a)
+\\__
+ _ 
+|_|
+| |
+ _ 
+|_)
+|_)
+ __
+/  
+\\__
+ _ 
+| \\
+|_/
+ __
+|_ 
+|__
+ __
+|_ 
+|  
+ __
+/__
+\\_|
+   
+|_|
+| |
+___
+ | 
+_|_
+   
+  |
+\\_|
+   
+|/ 
+|\\ 
+   
+|  
+|__
+   
+|V|
+| |
+   
+|\\|
+| |
+ _ 
+/ \\
+\\_/
+ _ 
+|_)
+|  
+ _ 
+/ \\
+\\_X
+ _ 
+|_)
+| \\
+ __
+(_ 
+__)
+___
+ | 
+ | 
+   
+| |
+|_|
+\\ /
+ V 
+   
+   
+| |
+|^|
+\\ /
+ X 
+/ \\
+\\ /
+ Y 
+ | 
+___
+ _/
+/__
++--
+|  
+|__
+\\  
+ \\ 
+  \\
+--+
+  |
+__|
+ _ 
+/ \\
+ $ 
+ $ 
+ $ 
+___
+ \\ 
+ $ 
+ $ 
+   
+ _ 
+(_|
+   
+|_ 
+|_)
+   
+ _ 
+(_ 
+   
+ _|
+(_|
+   
+ _ 
+(/_
+  _
+_|_
+ | 
+ _ 
+(_|
+__|
+   
+|_ 
+| |
+   
+ o 
+ | 
+ o 
+ | 
+_| 
+   
+ | 
+ |&lt;
+   
+ | 
+ | 
+   
+__ 
+|||
+   
+__ 
+| |
+   
+ _ 
+(_)
+ _ 
+|_)
+|  
+ _ 
+(_|
+  |
+   
+ __
+ | 
+   
+ _ 
+_&gt; 
+   
+_|_
+ |_
+   
+   
+|_|
+   
+   
+\\_/
+   
+   
+\\^/
+   
+   
+&gt;&lt; 
+   
+ \\/
+ / 
+   
+ _ 
+ /_
+  /
+-( 
+  \\
+ | 
+ | 
+ | 
+\\  
+ )-
+/  
+/\\/
+ $ 
+ $ 
+Expansion font for bigfig program by Glenn Chappell 4/93 -- based on Mini<br/>26 Apr 1995<br/>Permission is hereby given to modify this font, as long as the<br/>modifier's name is placed on a comment line.<br/><br/>This font is intended to be used with the \"bigfig\" program. It can<br/>be used as an ordinary figlet font, but it won't look very nice.<br/>\"bigfig\" is available by anonymous ftp from \"ftp.nicoh.com\". Look in<br/>the directory \"pub/figlet/util\".<br/><br/>Or, if you'd rather not use the bigfig program, just type<br/>figlet -w27 -f myfavoritefont | figlet -f bigfig<br/><br/>Explanation of first line:<br/>flf2 - \"magic number\" for file identification<br/>a    - should always be `a', for now<br/>$    - the \"hardblank\" -- prints as a blank, but can't be smushed<br/>3    - height of a character<br/>3    - height of a character, not including descenders<br/>5    - max line length (excluding comment lines) + a fudge factor<br/>-1   - default smushmode for this font<br/>23   - number of comment lines<br/><br/>
