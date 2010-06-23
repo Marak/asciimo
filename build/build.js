@@ -32,10 +32,18 @@ var files = fs.readdirSync('../fonts/');
 
 for(var i = 0; i < files.length; i++){
   //sys.puts(i);
-  var x = fs.readFileSync('../fonts/'+files[i]);
-  x = x.toString();
-  x = x.replace('&gt;','>');
-  x = x.replace('&lt;','<');
+  try {
+
+    var x = fs.readFileSync('../fonts/'+files[i]);
+    x = x.toString();
+    x = x.replace('&gt;','>');
+    x = x.replace('&lt;','<');
+    
+  }
+  catch (err){
+    
+  }
+  
 }
 
 
