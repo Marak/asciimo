@@ -29,25 +29,15 @@ var sys = require('sys');
 var fs = require('fs');
 
 var files = fs.readdirSync('../fonts/');
+var out = [];
 
-for(var i = 0; i < files.length; i++){
-  //sys.puts(i);
-  try {
-
-    var x = fs.readFileSync('../fonts/'+files[i]);
-    x = x.toString();
-    x = x.replace('&gt;','>');
-    x = x.replace('&lt;','<');
-    
-  }
-  catch (err){
-    
-  }
-  
-}
+files.forEach(function(i){
+  var k = i.replace('.flf','');
+  out.push(k);
+});
 
 
-var code = "var asciimoFonts = " + JSON.stringify(files,true,"  ") + ';';
+var code = "var asciimoFonts = " + JSON.stringify(out,true,"  ") + ';';
 fs.writeFile('../lib/fonts.js',code,function(err, data){
   if(err){
     sys.puts('fonts.js couldn\'t generate');
