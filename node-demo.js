@@ -45,7 +45,7 @@ asciimo.write(text, font, function(art){
 
     asciimo.write(moreText, anotherFont, function(art){
       sys.puts(art.green);  
-      var anotherFont = 'Tinker_Toy';
+      var anotherFont = 'tinker-toy';
       var moreText = "Marak Squires 2010";
 
       asciimo.write(moreText, anotherFont, function(art){
