@@ -70,9 +70,8 @@ THE SOFTWARE.
 	<!-- fonts.js doesn't contain the fonts, just the font names. fonts are located in /asciimo/fonts/   -->
 	<script type="text/javascript" src="./lib/fonts.js"></script>
 
-  <!-- jquery not required, just use this this demo page -->
+  <!-- jquery not required, just used in the demo page -->
 	<script type="text/javascript" src="./lib/jquery.js"></script>
-
 
   <script type="text/javascript">
   
@@ -95,7 +94,7 @@ THE SOFTWARE.
         $(document).bind('##CHANGE_FONT##', function(e, data){
           var font = data.fontName; 
           $.get('./fonts/' + font,function(rsp){
-            COOL_MAGIC(rsp); // call asciimo API method, we can make this better. just file a support issue!
+            Figlet(rsp); // call asciimo API method, we can make this better. just file a support issue!
             $(document).trigger('##RENDER_ASCII_ART##'); // the font has changed, lets call the render ascii art event
           });
         });

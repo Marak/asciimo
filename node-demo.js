@@ -25,30 +25,30 @@ THE SOFTWARE.
 
 
 var sys = require('sys');
-var asciimo = require('./lib/asciimo');
+var asciimo = require('./lib/asciimo').Figlet;
 var colors = require('./lib/colors'); // add colors for fun
 
 // pick the font file
-var font = 'Doh.flf';
-// set text we are going to turn into leet ascii art
-var text = "hello";
+var font = 'banner';
+// set text we are writeing to turn into leet ascii art
+var text = "hello, i am asciimo";
 
-asciimo.go(font, text, function(art){
+asciimo.write(text, font, function(art){
   sys.puts(art.magenta);
-  var anotherFont = 'Banner.flf';
-  var moreText = "i turn text into leet ascii art";
+  var anotherFont = 'binary';
+  var moreText = "i turn text into leet ascii art ^_^.";
 
-  asciimo.go(anotherFont, moreText, function(art){
+  asciimo.write(moreText, anotherFont, function(art){
     sys.puts(art.red);
-    var anotherFont = 'Colossal.flf';
-    var moreText = "300+ fonts supported";
+    var anotherFont = 'Colossal';
+    var moreText = "400+ fonts supported";
 
-    asciimo.go(anotherFont, moreText, function(art){
+    asciimo.write(moreText, anotherFont, function(art){
       sys.puts(art.green);  
-      var anotherFont = 'Tinker_Toy.flf';
+      var anotherFont = 'Tinker_Toy';
       var moreText = "Marak Squires 2010";
 
-      asciimo.go(anotherFont, moreText, function(art){
+      asciimo.write(moreText, anotherFont, function(art){
         sys.puts(art.yellow);  
         sys.puts('if you can\'t see the text try making your console larger'.red.underline)
       });
