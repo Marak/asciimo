@@ -20,40 +20,40 @@
 ## USAGE
 
 ### node.js - 
-        var sys = require('sys');
-        var asciimo = require('./lib/asciimo');
-        var colors = require('./lib/colors'); // add colors for fun
+          var sys = require('sys');
+          var asciimo = require('./lib/asciimo').Figlet;
+          var colors = require('./lib/colors'); // add colors for fun
 
-        // pick the font file
-        var font = 'soft.flf';
-        // set text we are going to turn into leet ascii art
-        var text = "hello, i am asciimo!";
+          // pick the font file
+          var font = 'banner';
+          // set text we are writeing to turn into leet ascii art
+          var text = "hello, i am asciimo";
 
-        asciimo.text(font, text, function(art){
-          sys.puts(art.magenta);
-          var anotherFont = 'Banner.flf';
-          var moreText = "i turn text into leet ascii art";
+          asciimo.write(text, font, function(art){
+            sys.puts(art.magenta);
+            var anotherFont = 'binary';
+            var moreText = "i turn text into leet ascii art ^_^.";
 
-          asciimo.text(anotherFont, moreText, function(art){
-            sys.puts(art.red);
-            var anotherFont = 'Colossal.flf';
-            var moreText = "300+ fonts supported";
+            asciimo.write(moreText, anotherFont, function(art){
+              sys.puts(art.red);
+              var anotherFont = 'Colossal';
+              var moreText = "400+ fonts supported";
 
-            asciimo.text(anotherFont, moreText, function(art){
-              sys.puts(art.green);  
-              var anotherFont = 'Tinker_Toy.flf';
-              var moreText = "Marak Squires 2010";
+              asciimo.write(moreText, anotherFont, function(art){
+                sys.puts(art.green);  
+                var anotherFont = 'tinker-toy';
+                var moreText = "Marak Squires 2010";
 
-              asciimo.text(anotherFont, moreText, function(art){
-                sys.puts(art.yellow);  
-                sys.puts('if you can\'t see the text try making your console larger'.red.underline)
+                asciimo.write(moreText, anotherFont, function(art){
+                  sys.puts(art.yellow);  
+                  sys.puts('if you can\'t see the text try making your console larger'.red.underline)
+                });
+
               });
 
             });
 
           });
-
-        });
 
 ### browser - 
 
@@ -72,65 +72,66 @@
 
           <script type="text/javascript">
 
-            // not used, could be implemented, maybe AJAX browser cache is good enough? do some research!
-            var fontCache = {};
+          // not used, could be implemented, maybe AJAX browser cache is good enough? do some research!
+          var fontCache = {};
 
-            $(document).ready(function(){
+          $(document).ready(function(){
 
-              // populate the select box
-              for(var i = 0; i<asciimoFonts.length; i++){
-                var fontTitle = asciimoFonts[i].replace('.flf','').replace('.aol',''); // remove the file extentions for the title
-                $('#fontSelector').append('<option value = "'+asciimoFonts[i]+'">'+fontTitle+'</option>');
-              }
+            // populate the select box
+            for(var i = 0; i<Figlet.fontList.length; i++){
+              var fontTitle = Figlet.fontList[i].replace('.flf','').replace('.aol',''); // remove the file extentions for the title
+              $('#fontSelector').append('<option value = "'+Figlet.fontList[i]+'">'+fontTitle+'</option>');
+            }
     
-              // protip : understanding the following two blocks of code will make you jQuery ninja
+            // protip : understanding the following two blocks of code will make you jQuery ninja
     
-              /***** NAMED EVENTS *****/
+            /***** NAMED EVENTS *****/
 
-                // change the font and load a new font via jQuery async AJAX request
-                $(document).bind('##CHANGE_FONT##', function(e, data){
-                  var font = data.fontName; 
-                  $.get('./fonts/' + font,function(rsp){
-                    loadFont(rsp); // call asciimo API method, we can make this better. just file a support issue!
-                    $(document).trigger('##RENDER_ASCII_ART##'); // the font has changed, lets call the render ascii art event
-                  });
+              // change the font and load a new font via jQuery async AJAX request
+              $(document).bind('##CHANGE_FONT##', function(e, data){
+                Figlet.loadFont(data.fontName, function(rsp){
+                  $(document).trigger('##RENDER_ASCII_ART##', {font:rsp}); // the font has changed, lets call the render ascii art event
                 });
+              });
   
-                $(document).bind('##RENDER_ASCII_ART##', function(e){
-                  $('#asciiArt').html('<pre>' + createLargeText($('#theCode').val()) + '</pre>');
-                });
+              $(document).bind('##RENDER_ASCII_ART##', function(e){
+                Figlet.write($('#theCode').val(), $('#fontSelector').val(), function(str) {
+                  debug.log('wrote');
+            		  $('#asciiArt').html('<pre>' + str + '</pre>');
+            		});
+              });
 
-              /**** END NAMED EVENTS ****/
+            /**** END NAMED EVENTS ****/
 
-              /**** BIND UI EVENTS ****/
+            /**** BIND UI EVENTS ****/
 
-                // select box change
-                $('#fontSelector').change(function(){
-                  $(document).trigger('##CHANGE_FONT##', {"fontName":$(this).val()})
-                });
+              // select box change
+              $('#fontSelector').change(function(){
+                $(document).trigger('##CHANGE_FONT##', {"fontName":$(this).val()})
+              });
     
-                // you would think jQuery.change() would cover the keypress event on select boxes? 
-                $("#fontSelector").keypress(function (){
-                  $(document).trigger('##CHANGE_FONT##', {"fontName":$(this).val()})
-                });
+              // you would think jQuery.change() would cover the keypress event on select boxes? 
+              $("#fontSelector").keypress(function (){
+                $(document).trigger('##CHANGE_FONT##', {"fontName":$(this).val()})
+              });
 
-                // keyup on textarea
-                $('#theCode').keyup(function(e){
-                  $(document).trigger('##RENDER_ASCII_ART##');
-                });
+              // keyup on textarea
+              $('#theCode').keyup(function(e){
+                $(document).trigger('##RENDER_ASCII_ART##');
+              });
     
-                $('#run').click(function(e){
-                  $(document).trigger('##RENDER_ASCII_ART##');
-                });
+              $('#run').click(function(e){
+                $(document).trigger('##RENDER_ASCII_ART##');
+              });
 
-              /**** END UI BIND EVENTS ****/
+            /**** END UI BIND EVENTS ****/
 
-              // little bit of a onReady hack. i'll fix the API a bit so this can be done better
-              $(document).trigger('##CHANGE_FONT##', {"fontName":'Doh.flf'});
-              $('#fontSelector').val('Doh.flf');
+            // little bit of a onReady hack. i'll fix the API a bit so this can be done better
+            $(document).trigger('##CHANGE_FONT##', {"fontName":'Doh'});
+            $('#fontSelector').val('Doh');
 
-            });
-          </script>
+          });
+        </script>
 
 
 ## Authors

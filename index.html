@@ -80,8 +80,7 @@ THE SOFTWARE.
   
     // not used, could be implemented, maybe AJAX browser cache is good enough? do some research!
     var fontCache = {};
-    // bleh not that great
-    var cachedFont;
+
     $(document).ready(function(){
 
       // populate the select box
@@ -96,21 +95,16 @@ THE SOFTWARE.
 
         // change the font and load a new font via jQuery async AJAX request
         $(document).bind('##CHANGE_FONT##', function(e, data){
-          
-          debug.log('##CHANGE_FONT##');
           Figlet.loadFont(data.fontName, function(rsp){
             $(document).trigger('##RENDER_ASCII_ART##', {font:rsp}); // the font has changed, lets call the render ascii art event
           });
         });
     
         $(document).bind('##RENDER_ASCII_ART##', function(e){
-          debug.log('##RENDER_ASCII_ART##');
           Figlet.write($('#theCode').val(), $('#fontSelector').val(), function(str) {
             debug.log('wrote');
       		  $('#asciiArt').html('<pre>' + str + '</pre>');
       		});
-          
-          
         });
 
       /**** END NAMED EVENTS ****/
