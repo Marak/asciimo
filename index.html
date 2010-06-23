@@ -92,15 +92,39 @@ THE SOFTWARE.
 
         // change the font and load a new font via jQuery async AJAX request
         $(document).bind('##CHANGE_FONT##', function(e, data){
+          
+          Figlet.loadFont = function(name, fn) {
+        		$.ajax({
+        			url: "fonts/" + name + ".flf",
+        			dataType: "text",
+        			success: fn
+        		});
+        	};
+          
+          
           var font = data.fontName; 
           $.get('./fonts/' + font,function(rsp){
-            Figlet(rsp); // call asciimo API method, we can make this better. just file a support issue!
+            
+            Figlet.loadFont = function(name, fn) {
+          		$.ajax({
+          			url: "fonts/" + name + ".flf",
+          			dataType: "text",
+          			success: fn
+          		});
+          	};
+            
             $(document).trigger('##RENDER_ASCII_ART##'); // the font has changed, lets call the render ascii art event
+            
           });
         });
     
         $(document).bind('##RENDER_ASCII_ART##', function(e){
-          $('#asciiArt').html('<pre>' + createLargeText($('#theCode').val()) + '</pre>');
+          
+          Figlet.write($('#theCode').val(), 'Doh', function(str) {
+      		  $('#asciiArt').html('<pre>' + str + '</pre>');
+      		});
+          
+          
         });
 
       /**** END NAMED EVENTS ****/
@@ -129,7 +153,7 @@ THE SOFTWARE.
       /**** END UI BIND EVENTS ****/
 
       // little bit of a onReady hack. i'll fix the API a bit so this can be done better
-      $(document).trigger('##CHANGE_FONT##', {"fontName":'Doh.flf'});
+      $(document).trigger('##CHANGE_FONT##', {"fontName":'Doh'});
       $('#fontSelector').val('Doh.flf');
 
     });
