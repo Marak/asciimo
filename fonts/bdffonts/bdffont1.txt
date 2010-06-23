@@ -1,0 +1,44 @@
+The following FIGfonts comprise the bdffont1 package.
+
+They are all converted from BDF-format (X Windows) fonts
+distributed by the X Consortium.  They are freely distributable.
+
+Proportional Fonts:
+
+	brite, briteb, britebi, britei
+		Lucida Bright fonts (roman, bold, bold italic, italic)
+	chartr, chartri
+		Charter fonts (roman, italic)
+	cour, courb, courbi, couri
+		Courier fonts (roman, bold, bold italic, italic)
+	helv, helvb, helvbi, helvi
+		Helvetica fonts (roman, bold, bold italic, italic)
+	sans, sansb, sansbi, sansi
+		Lucida Sans fonts (roman, bold, bold italic, italic)
+	sbook, sbookb, sbookbi, sbooki
+		Century SchoolBook fonts (roman, bold, bold italic, italic)
+	times
+		Times Roman font
+	tty, ttyb
+		Lucida Sans Typewriter fonts (roman, bold)
+	utopia, utopiab, utopiabi, utopiai
+		Utopia fonts (roman, bold, bold italic, italic)
+
+All these fonts are available in a larger size, which has the
+same name with an "x" prefix:  xbrite, xsbookbi, xtty, etc.
+
+Fixed-width Fonts:
+
+	5x7, 5x8, 6x9, 6x10
+		standard fixed-width fonts
+	clr4x6, clr5x6, clr5x8, clr5x10, clr6x6, clr6x8, clr6x10
+	clr7x8, clr7x10, clr8x8, clr8x10
+		Clear Roman fonts
+	clb6x10, clb8x8, clb8x10
+		Clear Bold fonts
+	cli8x8
+		Clear Italic font
+
+Also included is the Perl script bdf2flf, which was used to make
+these fonts.  It should work on any BDF-format font, but it assumes
+Latin-1 encoding and Adobe character names.

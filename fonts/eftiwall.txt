@@ -1,0 +1,44 @@
+From owner-figlet-l@VMD.CSO.UIUC.EDU Wed Feb 22 11:26:52 1995
+Date:         Wed, 22 Feb 1995 18:29:03 +0100
+Reply-To: "Discussions about the multi-font large-letter program,              FIGLET." <FIGLET-L@VMD.CSO.UIUC.EDU>
+Sender: "Discussions about the multi-font large-letter program,              FIGLET." <FIGLET-L@VMD.CSO.UIUC.EDU>
+From: Michel Eftimakis <Michel.Eftimakis@ustc.vlsi.com>
+Organization: VLSI Technology - US Technology Centers
+Subject:      DISCUSSION: New eftiwall font usage
+To: Multiple recipients of list FIGLET-L <FIGLET-L@VMD.CSO.UIUC.EDU>
+
+ _ _         ||
+| U |_||||_  L|
+|   /o\||/o\
+|_n_\(L|L\_/ ()
+
+As this new font is a bit difficult to use... These are some hints
+ to use it painlessly :
+
+'(' and ')' are oriented to the character you want to highlight, the
+            pointed character is the one which is 'into' parenthesis.
+            For example:  '(' points to the right, ')' to the left
+
+It's the same thing with :
+        '<' and '>'
+        '[' and ']'
+        '+' and '-'
+        '.' and ','
+
+'!' allows you to have a space between 2 characters.
+
+Hope this will help you to draw a lot of *PRETTY* .sig !!!  8)
+
+     /\                 * _   *   ,-------.    `  _  '
+    /  \/\           *   (_)   *  | Bye ! |   -  (_)  -
+ /`/   /  \           * ( o )*   *_)------'     '   `
+--------------------ooO-------Ooo----------------------
+
+_______     />    __    __ () __     ____________________________
+      _,O  /'    /  \_.' /__ / /_ __
+    ,'*\Y\/     /  /\'/ //_// _'//o_)  ()             __    ()
+    `'\ `\     /__/  /_/ __/_/ _\\/ / __ __  __ ___  / /_  __ ___
+      .\_/. _         / _/  / 7  / _7/ //  `' //o / /  '/ / /( _/
+   (   |n|   )       /____//_/  /_/ /_//_/)/)/|_,_//_/\_\/_//__)
+  (_,  |H|._)              Michel.Eftimakis@ustc.vlsi.com
+

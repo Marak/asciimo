@@ -1,0 +1,131 @@
+From owner-figlet-l@VMD.CSO.UIUC.EDU Thu Feb 23 08:53:10 1995
+Date:         Thu, 23 Feb 1995 15:55:22 +0100
+Reply-To: "Discussions about the multi-font large-letter program,              FIGLET." <FIGLET-L@VMD.CSO.UIUC.EDU>
+Sender: "Discussions about the multi-font large-letter program,              FIGLET." <FIGLET-L@VMD.CSO.UIUC.EDU>
+From: Michel Eftimakis <Michel.Eftimakis@ustc.vlsi.com>
+Organization: VLSI Technology - US Technology Centers
+Subject:      Eftiwall characters table - Really useful !!!
+To: Multiple recipients of list FIGLET-L <FIGLET-L@VMD.CSO.UIUC.EDU>
+
+ _ _         ||
+| U |_||||_  L|
+|   /o\||/o\
+|_n_\(L|L\_/ ()
+
+As Ian has proposed, This is a table with the characters typed with eftiwall.
+Keep it printed near you when you want to draw a text !!!
+
+Bye ! And... Enjoy !!!!
+
+_______     />    __    __ () __     ____________________________
+      _,O  /'    /  \_.' /__ / /_ __
+    ,'*\Y\/     /  /\'/ //_// _'//o_)  ()             __    ()
+    `'\ `\     /__/  /_/ __/_/ _\\/ / __ __  __ ___  / /_  __ ___
+      .\_/. _         / _/  / 7  / _7/ //  `' //o / /  '/ / /( _/
+   (   |n|   )       /____//_/  /_/ /_//_/)/)/|_,_//_/\_\/_//__)
+  (_,  |H|._)              Michel.Eftimakis@ustc.vlsi.com
+
+######### EFTIWALL.FLF characters table #####################################
+
+1             2             3             4             5
+
+     ...           ...           ...           ...           ...
+    (o o)         (- o)         (o -)         (- -)         (* *)
+ooO--(_)--Ooo-ooO--(_)--Ooo-ooO--(_)--Ooo-ooO--(_)--Ooo-ooO--(_)--Ooo-
+
+6             7             8             9             0
+
+     ...           ...           ...           ...           ...
+    (x x)         (o O)         (O o)         ( oo)         (. .)
+ooO--(_)--Ooo-ooO--(_)--Ooo-ooO--(_)--Ooo-ooO--(_)--Ooo-ooO--(_)--Ooo-
+
+A             B             C             D             E
+
+     ___           ,,,           ooo           ===           +++
+    (o o)         (o o)         (o o)         (o o)         (o o)
+ooO--(_)--Ooo-ooO--(_)--Ooo-ooO--(_)--Ooo-ooO--(_)--Ooo-ooO--(_)--Ooo-
+
+F             G             H             I             J
+
+     ###          -*~*-          ***           |||          -`^'-
+    (o o)         (o o)         (o o)         (o o)         (o o)
+ooO--(_)--Ooo-ooO--(_)--Ooo-ooO--(_)--Ooo-ooO--(_)--Ooo-ooO--(_)--Ooo-
+
+K             L             M             N             O
+
+     /777          _/7           )))           (((           xxx
+    (o o)         (o o)         (o o)         (o o)         (o o)
+ooO--(_)--Ooo-ooO--(_)--Ooo-ooO--(_)--Ooo-ooO--(_)--Ooo-ooO--(_)--Ooo-
+
+P             Q             R             S             T
+                                  _
+  `  ___  '        @__           ((_           >X<           '*`
+ -  (O o)  -      (o o)         (o o)         (o o)         (o o)
+ooO--(_)--Ooo-ooO--(_)--Ooo-ooO--(_)--Ooo-ooO--(_)--Ooo-ooO--(_)--Ooo-
+
+U             V             W             X             Y
+
+    \-^-/          ^^^           )|(           \|/           &&&
+    (o o)         (o o)         (o o)         (o o)         (o o)
+ooO--(_)--Ooo-ooO--(_)--Ooo-ooO--(_)--Ooo-ooO--(_)--Ooo-ooO--(_)--Ooo-
+
+Z             <                                >
+     (        ,---------------------------.    ,---------------------------.
+     _)_      | Write your message here ! |    | Write your message here ! |
+    (o o)     `--------------------------(_    _)--------------------------'
+ooO--(_)--Ooo---------------------------------------------------------------
+
+a             b             c             d                e
+   |              ( ( (                           ...           |"|
+   |.===.       '. ___ .'       ,,,,,        o,*,(o o)         _|_|_
+   {}o o{}     '  (> <) '      /(o o)\      8(o o)(_)Ooo       (o o)
+ooO--(_)--Ooo-ooO--(_)--Ooo-ooO--(_)--Ooo-ooO-(_)---Ooo----ooO--(_)--Ooo-
+
+f             g             h             i             j
+      _                          ___         .      .
+    _|_|_        __MMM__        .|||.      .  .:::.          vvv
+    (o o)         (o o)         (o o)        :(o o):  .     (0~0)
+ooO--(_)--Ooo-ooO--(_)--Ooo-ooO--(_)--Ooo-ooO--(_)--Ooo-ooO--(_)--Ooo-
+
+k             l             m             n              o
+     ___         _     _          ___         _   _      #   ___
+    /\#/\      o' \,=./ `o       /_\ `*      '\\-//`     #  <_*_>
+   /(o o)\        (o o)         (o o)         (o o)      #  (o o)
+ooO--(_)--Ooo-ooO--(_)--Ooo-ooO--(_)--Ooo-ooO--(_)--Ooo--8---(_)--Ooo-
+
+p                  q             r             s             t
+#                 #     ___           !!!
+#=ooO=========Ooo=#    '/_\        `  _ _  '     `  _ ,  '       ()_()
+#  \\  (o o)  //  #    (o o)      -  (OXO)  -   -  (o)o)  -      (o o)
+--------(_)--------ooO--(_)--Ooo-ooO--(_)--Ooo--ooO'(_)--Ooo-ooO--`o'--Ooo-
+
+u             v             w             x             y
+      o            ___       #  #  #  #       _   _             .
+   ` /_\ '       .'_#_`.     #  #..#  #      (_)-(_)        ,-_-|
+  - (o o) -      |[o o]|     #  #O #) #       (o o)        ([o o])
+ooO--(_)--Ooo-ooO--(_)--Ooo-o#O-#(_#--#oo-ooO--(_)--Ooo-ooO--(_)--Ooo-
+
+z              [             \            ]            (           )
+                __________    __________    __________ ,------.    ,------.
+    ((__))     |Look There`. |Look  Here| ,'Look There|| Hi ! |    | Hi ! |
+     (00)      |__________,' |__________| `.__________|`-----(_    _)-----'
+nn--(o__o)--nn------||------------||------------||-------------------------
+
+!       ?     @     %            ^             &         '         *
+                         /\      \|/ ____ \|/      ___    `  _  '    _
+                        /  \/\    @~/ ,. \~@    __(   )  -  (_)  -  oo\
+               __    /`/   /  \  /_( \__/ )_\  (_______)   '   `   (__)\
+---------._,--'  `------------------\__U_/--------------------------------
+
++                =             "        _      /             -
+  ___                  n            \/   '\/`      * _   *               ___
+ / _()- - - - - > ____/_\____   v        (oo)   *   (_)   *  < - - - - -()_ \
+ | |   !!            (z z)         v    (_`'_)   * ( o )*   *        !!   | |
+-----------------ooO--(_)--Ooo-----------_!!_--ooO-------Ooo------------------
+
+.                            ;          :        ,
+,---------------------------.                    ,----------------------------.
+| (c) Michel Eftimakis 1995 |    "          "    | Ask for other 'efti' fonts |
+`--------------------------(_`       '  `  ___  '_)---------------------------'
+--------------------------- -ooO---Ooo--ooO---Ooo- ----------------------------
+
