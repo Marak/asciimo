@@ -37,7 +37,7 @@ files.forEach(function(i){
 });
 
 
-var code = "var asciimoFonts = " + JSON.stringify(out,true,"  ") + ';';
+var code = "Figlet.fontList = " + JSON.stringify(out,true,"  ") + ';';
 fs.writeFile('../lib/fonts.js',code,function(err, data){
   if(err){
     sys.puts('fonts.js couldn\'t generate');

@@ -73,17 +73,21 @@ THE SOFTWARE.
   <!-- jquery not required, just used in the demo page -->
 	<script type="text/javascript" src="./lib/jquery.js"></script>
 
+  <!-- debug.js is not required, just used for fun -->
+	<script type="text/javascript" src="./lib/debug.js"></script>
+
   <script type="text/javascript">
   
     // not used, could be implemented, maybe AJAX browser cache is good enough? do some research!
     var fontCache = {};
-    var F;
+    // bleh not that great
+    var cachedFont;
     $(document).ready(function(){
 
       // populate the select box
-      for(var i = 0; i<asciimoFonts.length; i++){
-        var fontTitle = asciimoFonts[i].replace('.flf','').replace('.aol',''); // remove the file extentions for the title
-        $('#fontSelector').append('<option value = "'+asciimoFonts[i]+'">'+fontTitle+'</option>');
+      for(var i = 0; i<Figlet.fontList.length; i++){
+        var fontTitle = Figlet.fontList[i].replace('.flf','').replace('.aol',''); // remove the file extentions for the title
+        $('#fontSelector').append('<option value = "'+Figlet.fontList[i]+'">'+fontTitle+'</option>');
       }
       
       // protip : understanding the following two blocks of code will make you jQuery ninja
@@ -92,19 +96,17 @@ THE SOFTWARE.
 
         // change the font and load a new font via jQuery async AJAX request
         $(document).bind('##CHANGE_FONT##', function(e, data){
-          F = data.fontName; 
           
-          $.get('./fonts/' + F,function(rsp){
-   
-            
-            $(document).trigger('##RENDER_ASCII_ART##'); // the font has changed, lets call the render ascii art event
-            
+          debug.log('##CHANGE_FONT##');
+          Figlet.loadFont(data.fontName, function(rsp){
+            $(document).trigger('##RENDER_ASCII_ART##', {font:rsp}); // the font has changed, lets call the render ascii art event
           });
         });
     
         $(document).bind('##RENDER_ASCII_ART##', function(e){
-          
-          Figlet.write($('#theCode').val(), F, function(str) {
+          debug.log('##RENDER_ASCII_ART##');
+          Figlet.write($('#theCode').val(), $('#fontSelector').val(), function(str) {
+            debug.log('wrote');
       		  $('#asciiArt').html('<pre>' + str + '</pre>');
       		});
           
@@ -138,7 +140,7 @@ THE SOFTWARE.
 
       // little bit of a onReady hack. i'll fix the API a bit so this can be done better
       $(document).trigger('##CHANGE_FONT##', {"fontName":'Doh'});
-      $('#fontSelector').val('Doh.flf');
+      $('#fontSelector').val('Doh');
 
     });
   </script>
