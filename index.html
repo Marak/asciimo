@@ -71,10 +71,10 @@ THE SOFTWARE.
 	<script type="text/javascript" src="./lib/fonts.js"></script>
 
   <!-- jquery not required, just used in the demo page -->
-	<script type="text/javascript" src="./lib/jquery.js"></script>
+	<script type="text/javascript" src="./vendor/jquery.js"></script>
 
   <!-- debug.js is not required, just used for fun -->
-	<script type="text/javascript" src="./lib/debug.js"></script>
+	<script type="text/javascript" src="./vendor/debug.js"></script>
 
   <script type="text/javascript">
   
@@ -102,7 +102,7 @@ THE SOFTWARE.
     
         $(document).bind('##RENDER_ASCII_ART##', function(e){
           Figlet.write($('#theCode').val(), $('#fontSelector').val(), function(str) {
-            debug.log('wrote');
+            debug.log(str);
       		  $('#asciiArt').html('<pre>' + str + '</pre>');
       		});
         });
@@ -134,7 +134,7 @@ THE SOFTWARE.
 
       // little bit of a onReady hack. i'll fix the API a bit so this can be done better
       $(document).trigger('##CHANGE_FONT##', {"fontName":'Doh'});
-      $('#fontSelector').val('Doh');
+      $('#fontSelector').val('doh');
 
     });
   </script>
