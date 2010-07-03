@@ -26,23 +26,15 @@ THE SOFTWARE.
 var files = fs.readdirSync('./fonts');
 
 for(var i = 0 ; i < files.length; i ++){
-  
   try{
     var x = fs.readFileSync('./fonts/'+files[i]);
-    //sys.puts(files[i]);
-
-      x = x.toString();
-      x = x.replace(/&gt;/g, '>');
-      x = x.replace(/&lt;/g, '<');
-
-      sys.puts(x);
-      fs.writeFileSync('./fonts/'+files[i],x);
-    
-    
+    x = x.toString();
+    x = x.replace(/&gt;/g, '>');
+    x = x.replace(/&lt;/g, '<');
+    sys.puts(x);
+    fs.writeFileSync('./fonts/'+files[i],x);
   }
   catch(err){
     //sys.puts(err);
   }
-  
- 
 }

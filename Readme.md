@@ -1,4 +1,3 @@
-
 <table>
   <tr valign = "middle">
     <td><img src = "http://imgur.com/kmbjB.png"/></td>
@@ -9,8 +8,6 @@
       <h1>i work in node.js and the browser</h1>
     </td>    
   </tr>
-
-
 </table>
 
 <div align = "center"><img src = "http://i.imgur.com/CDKZc.png" border = "0"/></div>
@@ -136,5 +133,5 @@
 
 ## Authors
 #### Marak Squires, 
-####AWESOME FIGlet parser by <a href = "http://github.com/scottgonzalez/figlet-js.git">Scott Gonzalez</a>
+####AWESOME FIGlet parser by <a href = "http://github.com/scottgonzalez/figlet-js">Scott Gonzalez</a>
 
