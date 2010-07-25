@@ -29,13 +29,13 @@ var asciimo = require('./lib/asciimo').Figlet;
 var colors = require('./lib/colors'); // add colors for fun
 
 // pick the font file
-var font = 'banner';
+var font = 'Banner';
 // set text we are writeing to turn into leet ascii art
 var text = "hello, i am asciimo";
 
 asciimo.write(text, font, function(art){
   sys.puts(art.magenta);
-  var anotherFont = 'binary';
+  var anotherFont = 'Binary';
   var moreText = "i turn text into leet ascii art ^_^.";
 
   asciimo.write(moreText, anotherFont, function(art){
