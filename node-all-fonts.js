@@ -31,7 +31,7 @@ var fonts,
     text = "hello, i am asciimo";
 
 function display_font(font){
-  var current_font = font.split('.')[0]; // remove .js
+  var current_font = font.substr(0,font.length-4); // remove .flf extension
   asciimo.write(text, current_font, function(art, current_font){
       sys.puts(current_font + '\n');
       sys.puts(art);
