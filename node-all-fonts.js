@@ -25,6 +25,7 @@ THE SOFTWARE.
 
 
 var sys = require('sys');
+var fs = require('fs');
 var asciimo = require('./lib/asciimo').Figlet;
 var colors = require('./lib/colors'); // add colors for fun
 
@@ -33,28 +34,12 @@ var font = 'Banner';
 // set text we are writeing to turn into leet ascii art
 var text = "hello, i am asciimo";
 
-asciimo.write(text, font, function(art){
-  sys.puts(art.rainbow);
-  var anotherFont = 'Binary';
-  var moreText = "i turn text into leet ascii art ^_^.";
-
-  asciimo.write(moreText, anotherFont, function(art){
-    sys.puts(art.red);
-    var anotherFont = 'Colossal';
-    var moreText = "400+ fonts supported";
-
-    asciimo.write(moreText, anotherFont, function(art){
-      sys.puts(art.green);  
-      var anotherFont = 'tinker-toy';
-      var moreText = "Marak Squires 2010";
-
-      asciimo.write(moreText, anotherFont, function(art){
-        sys.puts(art.yellow);  
-        sys.puts('if you can\'t see the text try making your console larger'.red.underline)
-      });
-
-    });
-
-  });
-
+fs.readdir('./fonts', function ( err, files ) {
+    for(var i = 0; i < files.length; i++) {
+        var current_font = files[i].split('.')[0]; // remove .js
+        asciimo.write(text, current_font, function(art, font){
+            sys.puts(font + '\n');
+            sys.puts(art);
+        });
+    }
 });
