@@ -11,8 +11,7 @@
 </table>
 
 <div align = "center"><img src = "http://i.imgur.com/CDKZc.png" border = "0"/></div>
-### 100% open-source. the truth is in the commit logs. people don't like to read
-### v0.2.1 online demo @ <a href = "http://asciimo.com" target = "_blank">http://asciimo.com</a>
+### v0.2.5 online demo @ <a href = "http://asciimo.com" target = "_blank">http://asciimo.com</a>
 ### font files are FIGlet .flf files <a href = "http://en.wikipedia.org/wiki/FIGlet">http://en.wikipedia.org/wiki/FIGlet</a>
 ## USAGE
 

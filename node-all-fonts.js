@@ -26,8 +26,8 @@ THE SOFTWARE.
 
 var sys = require('sys');
 var fs = require('fs');
-var asciimo = require('./lib/asciimo').Figlet;
-var colors = require('./lib/colors'); // add colors for fun
+var asciimo = require('asciimo').Figlet;
+var colors = require('colors'); // add colors for fun
 
 // pick the font file
 var font = 'Banner';
