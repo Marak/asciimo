@@ -27,19 +27,37 @@ THE SOFTWARE.
 var sys = require('sys');
 var fs = require('fs');
 var asciimo = require('asciimo').Figlet;
-var colors = require('colors'); // add colors for fun
+
+
+/* helper method of traversing directories */
+
+var fonts;
 
 // pick the font file
 var font = 'Banner';
 // set text we are writeing to turn into leet ascii art
 var text = "hello, i am asciimo";
 
+function display_font(font){
+  var current_font = font.split('.')[0]; // remove .js
+  asciimo.write(text, current_font, function(art, current_font){
+      sys.puts(current_font + '\n');
+      sys.puts(art);
+      if(fonts.length){
+        display_font(fonts.pop());
+      }
+  });
+}
+
 fs.readdir('./fonts', function ( err, files ) {
-    for(var i = 0; i < files.length; i++) {
-        var current_font = files[i].split('.')[0]; // remove .js
-        asciimo.write(text, current_font, function(art, font){
-            sys.puts(font + '\n');
-            sys.puts(art);
-        });
-    }
+    fonts = files;
+    // filter any files that aren't .flf files
+    fonts = fonts.filter(function(e){
+      if(e.substr(e.length-4,4)=='.flf'){
+        return e;
+      }
+    }).reverse(); // reverse the collection so it prints in alphabet order
+    
+    var font = fonts.pop();
+    display_font(font);
 });
