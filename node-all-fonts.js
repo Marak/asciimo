@@ -23,20 +23,12 @@ THE SOFTWARE.
 
 */
 
-
 var sys = require('sys');
 var fs = require('fs');
 var asciimo = require('asciimo').Figlet;
 
-
-/* helper method of traversing directories */
-
-var fonts;
-
-// pick the font file
-var font = 'Banner';
-// set text we are writeing to turn into leet ascii art
-var text = "hello, i am asciimo";
+var fonts,
+    text = "hello, i am asciimo";
 
 function display_font(font){
   var current_font = font.split('.')[0]; // remove .js
