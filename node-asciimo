@@ -1,0 +1,6 @@
+#!/usr/bin/env node
+
+var sys = require('sys');
+var asciimo = require('./lib/asciimo').Figlet;
+
+asciimo.write(process.argv[2], process.argv[3], function (x) {sys.puts(x);});
