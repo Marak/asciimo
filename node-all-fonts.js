@@ -25,7 +25,7 @@ THE SOFTWARE.
 
 var sys = require('sys');
 var fs = require('fs');
-var asciimo = require('asciimo').Figlet;
+var asciimo = require('./lib/asciimo').Figlet;
 
 var fonts,
     text = "hello, i am asciimo";
