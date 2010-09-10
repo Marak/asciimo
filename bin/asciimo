@@ -1,0 +1,36 @@
+#!/usr/bin/env node
+
+var sys = require('sys');
+var asciimo = require('asciimo').Figlet;
+
+if (process.argv.length === 4) {
+    asciimo.write(process.argv[2], process.argv[3], function (x) { sys.puts(x); } );
+} else {
+
+["    _"
+,"   / \\       ____________________________"
+,"  |  |      /                            \\"
+,"  @  @      | It looks like you are       |"
+,"  || ||  <--| trying to print text        |"
+,"  || ||     | with asciimo. Do you need   |"
+,"  |\\_/|     | some help with that?        |"
+,"  \\___/     \\_____________________________/"
+,""
+,"This is a simple, dumb CLI interface to asciimo. Its use is exceedingly simple:"
+,""
+,"    node-asciimo $TEXT $FONT"
+,""
+,"So, for example:"
+,""
+,"    [josh@eevee asciimo]$ ./node-asciimo \"roffles\" Cybermedium"
+,"____ ____ ____ ____ _    ____ ____ "
+,"|__/ |  | |___ |___ |    |___ [__  "
+,"|  \\ |__| |    |    |___ |___ ___] "
+,"                                   "
+,""
+,"To see all the available fonts, try running node-all-fonts.js:"
+,""
+,"    node node-all-fonts.js"
+,""
+,"Enjoy!"].forEach(function(x) {sys.puts(x);})
+}

@@ -12,7 +12,7 @@
   ],
   "keywords": ["ascii", "text", "art"],
   "dependencies": {
-    "colors": ">= 0.3.0"
+    "colors": ">= 0.3.1
   },
   "bin" : { "asciimo": "./bin/asciimo" },
   "main": "lib/asciimo",

@@ -11,7 +11,7 @@
 </table>
 
 <div align = "center"><img src = "http://i.imgur.com/CDKZc.png" border = "0"/></div>
-### v0.3.0 online demo @ <a href = "http://asciimo.com" target = "_blank">http://asciimo.com</a>
+### v0.3.1 online demo @ <a href = "http://asciimo.com" target = "_blank">http://asciimo.com</a>
 ### font files are FIGlet .flf files <a href = "http://en.wikipedia.org/wiki/FIGlet">http://en.wikipedia.org/wiki/FIGlet</a>
 ## USAGE
 
