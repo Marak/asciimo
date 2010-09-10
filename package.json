@@ -1,7 +1,7 @@
 {
   "name": "asciimo",
   "description": "create awesome ascii art with javascript! works in node.js or the browser.",
-  "version": "0.2.5",
+  "version": "0.3.0",
   "repository": {
       "type": "git",
       "url": "http://github.com/Marak/asciimo.git" 
@@ -14,6 +14,7 @@
   "dependencies": {
     "colors": ">= 0.3.0"
   },
+  "bin" : { "asciimo": "./bin/asciimo" },
   "main": "lib/asciimo",
   "engines": { "node": ">= 0.1.98" }
 }
