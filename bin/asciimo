@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
-var sys = require('sys');
+var util = require('util');
 var asciimo = require('asciimo').Figlet;
 
 if (process.argv.length === 4) {
-    asciimo.write(process.argv[2], process.argv[3], function (x) { sys.puts(x); } );
+    asciimo.write(process.argv[2], process.argv[3], function (x) { util.puts(x); } );
 } else {
 
 ["    _"
@@ -32,5 +32,5 @@ if (process.argv.length === 4) {
 ,""
 ,"    node node-all-fonts.js"
 ,""
-,"Enjoy!"].forEach(function(x) {sys.puts(x);})
+,"Enjoy!"].forEach(function(x) {util.puts(x);})
 }
