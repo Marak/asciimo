@@ -23,7 +23,7 @@ THE SOFTWARE.
 
 */
 
-var sys = require('sys');
+var util = require('util');
 var fs = require('fs');
 var asciimo = require('./lib/asciimo').Figlet;
 
@@ -33,8 +33,8 @@ var fonts,
 function display_font(font){
   var current_font = font.substr(0,font.length-4); // remove .flf extension
   asciimo.write(text, current_font, function(art, current_font){
-      sys.puts(current_font + '\n');
-      sys.puts(art);
+      util.puts(current_font + '\n');
+      util.puts(art);
       if(fonts.length){
         display_font(fonts.pop());
       }

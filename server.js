@@ -1,4 +1,4 @@
-var sys = require('sys');
+var util = require('util');
 var static = require('./vendor/node-static/lib/node-static');
 
 //
@@ -21,14 +21,14 @@ require('http').createServer(function (req, resp) {
         }
         file.serve(req, resp, function (err, res) {
             if (err) { // An error as occured
-                sys.error("> Error serving " + req.url + " - " + err.message);
+                util.error("> Error serving " + req.url + " - " + err.message);
                 resp.writeHead(err.status, err.headers);
                 resp.end();
             } else { // The file was served successfully
-                sys.puts("> " + req.url + " - " + res.message);
+                util.puts("> " + req.url + " - " + res.message);
             }
         });
     });
 }).listen(process.ENV.port || 8080);
 
-sys.puts("> asciimo is listening on http://127.0.0.1:8080");
+util.puts("> asciimo is listening on http://127.0.0.1:8080");
