@@ -27,117 +27,117 @@ THE SOFTWARE.
 -->
 
 <html>
-<head>
-	<title>asciimo - create awesome ascii art with javascript! works in the browser or node.js</title>
-	
-	
-	<!-- lol css -->
-	<style type="text/css">
-		* { padding: 0; margin: 0; }
-		body {
-			padding: 30px;
-			padding-top:5px;
-			font-family: Arial, Helvetica, sans-serif;
-		}
-		h1 {
-			margin-bottom: 1em;
-			border-bottom: 1px solid #ccc;
-		}
-		
-		h2 {
-			margin-bottom: 1em;
-			border-bottom: 1px solid #ccc;
-		}
+  <head>
+    <title>asciimo - create awesome ascii art with javascript! works in the browser or node.js</title>
 
-    h1 {
+
+    <!-- lol css -->
+    <style type="text/css">
+      * { padding: 0; margin: 0; }
+      body {
+        padding: 30px;
+        padding-top:5px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      h1 {
+        margin-bottom: 1em;
+        border-bottom: 1px solid #ccc;
+      }
+
+      h2 {
+        margin-bottom: 1em;
+        border-bottom: 1px solid #ccc;
+      }
+
+      h1 {
         margin-bottom: 0.7em;
-    }
-    
-    h2 {
+      }
+
+      h2 {
         margin-top: 1em;
-    }
-    
-    a { color:#0000FF;}
-    a.visited{ color:#0000FF;}
-    
-    
-    #theCode{width:100%;height:80px;}
-    #asciiArt{ width:3000px; height:1000px; color:white; background-color:black; scroll:auto;}
-    .ninja{font-size:10px;}
-	</style>
-	<script type="text/javascript" src="./lib/asciimo.js"></script>
+      }
 
-	<!-- fonts.js doesn't contain the fonts, just the font names. fonts are located in /asciimo/fonts/   -->
-	<script type="text/javascript" src="./lib/fonts.js"></script>
+      a { color:#0000FF;}
+      a.visited{ color:#0000FF;}
 
-  <!-- jquery not required, just used in the demo page -->
-	<script type="text/javascript" src="./vendor/jquery.js"></script>
 
-  <!-- debug.js is not required, just used for fun -->
-	<script type="text/javascript" src="./vendor/debug.js"></script>
+      #theCode{width:100%;height:80px;}
+      #asciiArt{ width:3000px; height:1000px; color:white; background-color:black; scroll:auto;}
+      .ninja{font-size:10px;}
+    </style>
+    <script type="text/javascript" src="./lib/asciimo.js"></script>
 
-  <script type="text/javascript">
-  
-    // not used, could be implemented, maybe AJAX browser cache is good enough? do some research!
+    <!-- fonts.js doesn't contain the fonts, just the font names. fonts are located in /asciimo/fonts/   -->
+    <script type="text/javascript" src="./lib/fonts.js"></script>
+
+    <!-- jquery not required, just used in the demo page -->
+    <script type="text/javascript" src="./vendor/jquery.js"></script>
+
+    <!-- debug.js is not required, just used for fun -->
+    <script type="text/javascript" src="./vendor/debug.js"></script>
+
+    <script type="text/javascript">
+
+      // not used, could be implemented, maybe AJAX browser cache is good enough? do some research!
     var fontCache = {};
 
-    $(document).ready(function(){
+$(document).ready(function(){
 
-      // populate the select box
-      for(var i = 0; i<Figlet.fontList.length; i++){
-        var fontTitle = Figlet.fontList[i].replace('.flf','').replace('.aol',''); // remove the file extentions for the title
-        $('#fontSelector').append('<option value = "'+Figlet.fontList[i]+'">'+fontTitle+'</option>');
-      }
-      
-      // protip : understanding the following two blocks of code will make you jQuery ninja
-      
-      /***** NAMED EVENTS *****/
+    // populate the select box
+    for(var i = 0; i<Figlet.fontList.length; i++){
+    var fontTitle = Figlet.fontList[i].replace('.flf','').replace('.aol',''); // remove the file extentions for the title
+    $('#fontSelector').append('<option value = "'+Figlet.fontList[i]+'">'+fontTitle+'</option>');
+    }
 
-        // change the font and load a new font via jQuery async AJAX request
-        $(document).bind('##CHANGE_FONT##', function(e, data){
-          Figlet.loadFont(data.fontName, function(rsp){
-            $(document).trigger('##RENDER_ASCII_ART##', {font:rsp}); // the font has changed, lets call the render ascii art event
-          });
+    // protip : understanding the following two blocks of code will make you jQuery ninja
+
+    /***** NAMED EVENTS *****/
+
+    // change the font and load a new font via jQuery async AJAX request
+    $(document).bind('##CHANGE_FONT##', function(e, data){
+      Figlet.loadFont(data.fontName, function(rsp){
+        $(document).trigger('##RENDER_ASCII_ART##', {font:rsp}); // the font has changed, lets call the render ascii art event
         });
-    
-        $(document).bind('##RENDER_ASCII_ART##', function(e){
-          Figlet.write($('#theCode').val(), $('#fontSelector').val(), function(str) {
-            debug.log(str);
-      		  $('#asciiArt').html('<pre>' + str + '</pre>');
-      		});
-        });
+      });
 
-      /**** END NAMED EVENTS ****/
+    $(document).bind('##RENDER_ASCII_ART##', function(e){
+      Figlet.write($('#theCode').val(), $('#fontSelector').val(), function(str) {
+        debug.log(str);
+            $('#asciiArt').html('<pre>' + str + '</pre>');
+            });
+      });
 
-      /**** BIND UI EVENTS ****/
+    /**** END NAMED EVENTS ****/
 
-        // select box change
-        $('#fontSelector').change(function(){
-          $(document).trigger('##CHANGE_FONT##', {"fontName":$(this).val()})
-        });
-      
-        // you would think jQuery.change() would cover the keypress event on select boxes? 
-        $("#fontSelector").keypress(function (){
-          $(document).trigger('##CHANGE_FONT##', {"fontName":$(this).val()})
+    /**** BIND UI EVENTS ****/
+
+    // select box change
+    $('#fontSelector').change(function(){
+        $(document).trigger('##CHANGE_FONT##', {"fontName":$(this).val()})
         });
 
-        // keyup on textarea
-        $('#theCode').keyup(function(e){
-          $(document).trigger('##RENDER_ASCII_ART##');
+    // you would think jQuery.change() would cover the keypress event on select boxes? 
+    $("#fontSelector").keypress(function (){
+        $(document).trigger('##CHANGE_FONT##', {"fontName":$(this).val()})
         });
-      
-        $('#run').click(function(e){
-          $(document).trigger('##RENDER_ASCII_ART##');
+
+    // keyup on textarea
+    $('#theCode').keyup(function(e){
+        $(document).trigger('##RENDER_ASCII_ART##');
         });
- 
-      /**** END UI BIND EVENTS ****/
 
-      // little bit of a onReady hack. i'll fix the API a bit so this can be done better
-      $(document).trigger('##CHANGE_FONT##', {"fontName":'Doh'});
-      $('#fontSelector').val('doh');
+    $('#run').click(function(e){
+        $(document).trigger('##RENDER_ASCII_ART##');
+        });
 
-    });
-  </script>
+    /**** END UI BIND EVENTS ****/
+
+    // little bit of a onReady hack. i'll fix the API a bit so this can be done better
+    $(document).trigger('##CHANGE_FONT##', {"fontName":'Doh'});
+    $('#fontSelector').val('doh');
+
+});
+</script>
 
 </head>
 <body>
@@ -188,8 +188,8 @@ THE SOFTWARE.
 
 
 </pre>
-    
-    
+
+
   </div>
   <a href = "http://github.com/marak/asciimo/">
     <img alt="Fork me on GitHub" src="http://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" style="position: absolute; z-index: 10; top: 0pt; right: 0pt; border: 0pt none;">
