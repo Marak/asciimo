@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/Marak/asciimo.png)](http://travis-ci.org/Marak/asciimo)
 <table>
   <tr valign = "middle">
     <td><img src = "http://imgur.com/kmbjB.png"/></td>
