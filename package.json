@@ -3,18 +3,43 @@
   "description": "create awesome ascii art with javascript! works in node.js or the browser.",
   "version": "0.3.1",
   "repository": {
-      "type": "git",
-      "url": "http://github.com/Marak/asciimo.git" 
+    "type": "git",
+    "url": "http://github.com/Marak/asciimo.git"
   },
-  "author": "Marak Squires <marak.squires@gmail.com>",
-  "contributors": [ 
-    { "name": "Justin Lilly"} 
+  "author": {
+    "name": "Marak Squires",
+    "email": "marak.squires@gmail.com"
+  },
+  "contributors": [
+    {
+      "name": "Justin Lilly"
+    }
   ],
-  "keywords": ["ascii", "text", "art"],
+  "keywords": [
+    "ascii",
+    "text",
+    "art"
+  ],
   "dependencies": {
     "colors": ">= 0.3.0"
   },
-  "bin" : { "asciimo": "./bin/asciimo" },
+  "bin": {
+    "asciimo": "./bin/asciimo"
+  },
   "main": "lib/asciimo",
-  "engines": { "node": ">= 0.1.98" }
+  "engines": {
+    "node": ">= 0.1.98"
+  },
+  "_id": "asciimo@0.3.1",
+  "_nodeSupported": true,
+  "_npmVersion": "0.2.7-2",
+  "_nodeVersion": "v0.3.1-pre",
+  "dist": {
+    "tarball": "http://registry.npmjs.org/asciimo/-/asciimo-0.3.1.tgz",
+    "shasum": "d64046bf3d6702496adce345c6c4bf9cd05c0e8f"
+  },
+  "directories": {},
+  "_shasum": "d64046bf3d6702496adce345c6c4bf9cd05c0e8f",
+  "_from": "asciimo@",
+  "_resolved": "https://registry.npmjs.org/asciimo/-/asciimo-0.3.1.tgz"
 }
