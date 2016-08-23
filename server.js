@@ -25,10 +25,10 @@ require('http').createServer(function (req, resp) {
                 resp.writeHead(err.status, err.headers);
                 resp.end();
             } else { // The file was served successfully
-                util.puts("> " + req.url + " - " + res.message);
+                console.log("> " + req.url + " - " + res.message);
             }
         });
     });
 }).listen(process.ENV.port || 8080);
 
-util.puts("> asciimo is listening on http://127.0.0.1:8080");
+console.log("> asciimo is listening on http://127.0.0.1:8080");

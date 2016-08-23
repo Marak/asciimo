@@ -18,8 +18,7 @@
 ### command-line -
           asciimo "roffles" Cybermedium
 
-### node.js - 
-          var sys = require('sys');
+### node.js -
           var asciimo = require('./lib/asciimo').Figlet;
           var colors = require('./lib/colors'); // add colors for fun
 
@@ -29,23 +28,23 @@
           var text = "hello, i am asciimo";
 
           asciimo.write(text, font, function(art){
-            sys.puts(art.magenta);
+            console.log(art.magenta);
             var anotherFont = 'binary';
             var moreText = "i turn text into leet ascii art ^_^.";
 
             asciimo.write(moreText, anotherFont, function(art){
-              sys.puts(art.red);
+              console.log(art.red);
               var anotherFont = 'Colossal';
               var moreText = "400+ fonts supported";
 
               asciimo.write(moreText, anotherFont, function(art){
-                sys.puts(art.green);  
+                console.log(art.green);
                 var anotherFont = 'tinker-toy';
                 var moreText = "Marak Squires 2010";
 
                 asciimo.write(moreText, anotherFont, function(art){
-                  sys.puts(art.yellow);  
-                  sys.puts('if you can\'t see the text try making your console larger'.red.underline)
+                  console.log(art.yellow);
+                  console.log('if you can\'t see the text try making your console larger'.red.underline)
                 });
 
               });
@@ -54,7 +53,7 @@
 
           });
 
-### browser - 
+### browser -
 
           // the current browser demo requires jQuery. you could easily make it work without jQuery.
           // we'll have to figure out a smarter way to make this library work dual-sided. 

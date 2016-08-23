@@ -25,7 +25,6 @@ THE SOFTWARE.
 
 
 /* use this file to build the font.json file based on the fonts directory */
-var util = require('util');
 var fs = require('fs');
 
 var files = fs.readdirSync('../fonts/');
@@ -40,9 +39,9 @@ files.forEach(function(i){
 var code = "Figlet.fontList = " + JSON.stringify(out,true,"  ") + ';';
 fs.writeFile('../lib/fonts.js',code,function(err, data){
   if(err){
-    util.puts('fonts.js couldn\'t generate');
+    console.log('fonts.js couldn\'t generate');
   }
   else{
-    util.puts('fonts.js written!');
+    console.log('fonts.js written!');
   }
 });

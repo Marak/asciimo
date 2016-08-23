@@ -31,10 +31,10 @@ for(var i = 0 ; i < files.length; i ++){
     x = x.toString();
     x = x.replace(/&gt;/g, '>');
     x = x.replace(/&lt;/g, '<');
-    util.puts(x);
+    console.log(x);
     fs.writeFileSync('./fonts/'+files[i],x);
   }
   catch(err){
-    //util.puts(err);
+    console.log(err);
   }
 }
