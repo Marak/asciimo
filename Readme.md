@@ -16,7 +16,10 @@
 ## USAGE
 
 ### command-line -
-          asciimo "roffles" Cybermedium
+
+```bash
+asciimo "roffles" Cybermedium
+```
 
 ### node.js -
 
